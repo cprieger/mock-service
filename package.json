@@ -1,0 +1,31 @@
+{
+  "name": "mock-service",
+  "version": "0.0.1",
+  "description": "For a test",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "csvtojson": "^2.0.10",
+    "express": "^4.17.1",
+    "geolib": "^3.2.1",
+    "helmet": "^3.21.3",
+    "lodash": "^4.17.15",
+    "trivial-logging": "^2.0.0"
+  },
+  "devDependencies": {
+    "axios": "^0.19.2",
+    "jest": "^25.1.0",
+    "jsdoc": "^3.6.3"
+  },
+  "scripts": {
+    "test": "jest --verbose=true",
+    "start": "node server.js",
+    "docker:build": "docker build ./ -t crieger/mock-service",
+    "docker:run": "docker run --name=mock-service -d -p 1338:1337 crieger/mock-service",
+    "docker:stop": "docker stop mock-service",
+    "docker:remove": "docker rm mock-service",
+    "jsdoc:generate": "jsdoc -c ./jsdoc.json --readme ./README.md"
+  },
+  "author": "crieger",
+  "license": "ISC"
+}
